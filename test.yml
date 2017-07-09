@@ -1,0 +1,14 @@
+version: "2"
+services:
+  zngtests:
+    image: jorgeavaldez/zngtests
+    build: ./test
+    links:
+      - mongo
+    volumes:
+      - ./:/usr/src/app
+
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
